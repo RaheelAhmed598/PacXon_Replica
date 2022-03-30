@@ -5,11 +5,13 @@ using UnityEngine;
 
 public class Matrix
 {
+    //matrix (rows and columns) through list 
     public int numOfRows;
     public int numOfColumns;
     List<List<int>> matrix;
+    
 
-
+    //initialize list matrix
     void InitializeMatrix()
     {
         matrix = new List<List<int>>();
@@ -19,6 +21,8 @@ public class Matrix
     {
         InitializeMatrix();
     }
+    
+    //no. of rows and columns of matrix
     public Matrix(int NumOfRows, int NumOfCols)
     {
         numOfRows = NumOfRows;
@@ -34,6 +38,7 @@ public class Matrix
         }
     }
 
+    //array of matrix
     public Matrix(int[,] array)
     {
         SetMatrix(array);
@@ -53,7 +58,8 @@ public class Matrix
             }
         }
     }
-
+    
+    //printing the matrix 
     public void PrintMatrix()
     {
         string displayMatrix = "";
@@ -71,7 +77,8 @@ public class Matrix
         Debug.Log(displayMatrix);
         Debug.Log("HelloJe");
     }
-
+    
+    // set the element of the array matrix
     public void SetElement(int r, int c, int v)
     {
         if (r < numOfRows && c < numOfColumns)
@@ -84,6 +91,7 @@ public class Matrix
         }
     }
 
+    // element get of array matrix
     public int GetElement(int r, int c)
     {
         if (r < numOfRows && c < numOfColumns)
@@ -108,6 +116,7 @@ public class Matrix
         }
     }
 
+    //checking the column condition 
     public bool IsColumnSame(int c)
     {
         bool issame = false;
@@ -132,6 +141,8 @@ public class Matrix
         }
         return issame;
     }
+    
+    //checking the row condition
     public bool IsRowSame(int r)
     {
         bool issame = false;
