@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class GridSpawner : MonoBehaviour
 {
-
+    // cube prefab 
     public GameObject cubePrefab;
+    
+    // no. of rows and columns 
     public int numOfRows;
     public int numOfCols;
     public List<List<GameObject>> cells = new List<List<GameObject>>();
     private int counter = 0;
+    
+    //grid space one another
     private int horizontalSpace = 1;
     private int verticalSpace = 1;
     void Start()
@@ -22,7 +26,8 @@ public class GridSpawner : MonoBehaviour
     {
 
     }
-
+    
+    //instantiate grid system
     public void InstantiateGrid()
     {
         for (int i = 0; i < numOfRows; i++)
@@ -37,7 +42,8 @@ public class GridSpawner : MonoBehaviour
             }
         }
     }
-
+    
+    //grid position 
     public void CellsPosition()
     {
         if (counter == numOfRows)
