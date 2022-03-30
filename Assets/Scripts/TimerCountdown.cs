@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
+// timer countdown 
 public class TimerCountdown : MonoBehaviour
 {
     public float timeRemaining = 10;
@@ -15,6 +15,8 @@ public class TimerCountdown : MonoBehaviour
         // Starts the timer automatically
         timerIsRunning = true;
     }
+    
+    //contdown system 
     void Update()
     {
         if (timerIsRunning)
@@ -24,6 +26,8 @@ public class TimerCountdown : MonoBehaviour
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
             }
+            
+            //if time is run out game stop
             else
             {
                 Debug.Log("Time has run out!");
@@ -34,6 +38,8 @@ public class TimerCountdown : MonoBehaviour
             }
         }
     }
+    
+    //display countdown system through UI
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
