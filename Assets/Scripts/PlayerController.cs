@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //player movement condition and time 
     private bool isMoving;
     private Vector3 origPos, targetPos;
     private float timeToMove = 0.4f;
     public float range = 20;
+    
+    //for color changes of cube 
+    //usingthe green cube prefab
     public GameObject greenBoxPrefab;
+    
+    //checking the instatiate condition
     public bool alreadyInstantiated = false;
     public bool playerPositionChanged = false;
+    
+    //total no of green box count 
     private int numberOfGreenBoxes;
+    
+    //player win condition
     private bool playerWon = false;
     
 
     void Update()
     {
 
+        //no of green box changes 
         numberOfGreenBoxes = GameObject.FindGameObjectsWithTag("GreenBox").Length;
-
+        
+        //in total no. of 70 green box appeeared 
+        //player win
         if (numberOfGreenBoxes >= 70)
         {
             playerWon = true;
         }
 
+        // player movement through raycast with 
+        //condition checking 
         if (!playerWon)
         {
 
